@@ -1,0 +1,118 @@
+/* pages/mine/mine.wxss */
+.container{
+  width: 100vw;
+  height: 100vh;
+  background-image:linear-gradient(#31AD77,#ffffff);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.top{
+  height: 48vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.avatar{
+  width: 15.2vh;
+  height: 15.2vh;
+  border-radius: 50%;
+  border: 1.4vw #ffffff solid;
+  box-shadow: 0 0 60rpx rgba(0, 0, 0, 0.15);
+}
+.cen{
+  background-color: #DCFFE8;
+  width: 85vw;
+  height: 20.4vh;
+  border-radius: 10.2vh;
+  margin-top: -8vh;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.15);
+}
+.bot{
+  width:100vw ;
+  height: 60vh;
+  z-index: 2;
+  background-color: #fff;
+  margin-top: -16vh;
+  border-top-right-radius: 7vh;
+  border-top-left-radius: 7vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 60rpx rgba(0, 0, 0, 0.15);
+}
+.botnick{
+  padding: 0.8vh 4.5vw;
+  min-width: 30vw;
+  text-align: center;
+  background-color: #52C18C;
+  font-size: 3.7vw;
+  color: #ffffff;
+  border-radius: 5vw;
+  box-shadow: 0 0 70rpx rgba(0, 0, 0, 0.2);
+  margin-top: -2vh;
+}
+.list{
+  margin-top: 6vh;
+  width: 100vw;
+}
+.listone{
+  height:8vh ;
+  margin: 0 12vw;
+  border-top: 0.1vh solid #A0A0A0;
+  border-bottom: 0.1vh solid #A0A0A0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.listone1{
+  height:8vh ;
+  margin: 0 12vw;
+  /* border-top: 0.15vh solid #A0A0A0; */
+  border-bottom: 0.1vh solid #A0A0A0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.listone>button,.listone1>button{
+background-color:#fff;
+  width: 100%;
+  height: 100%;
+  color:#00592E ;
+  font-size: 3.7vw;
+  letter-spacing:0.15rem;
+  text-align: left;
+  padding-left: 12vw;
+  line-height: 6vh;
+}
+button::after {
+  border: none;
+  background-color: #fff;
+}
+.button-hover {
+  background-color:#fff;
+}
+.icon{
+  position: absolute;
+  width: 4vw;
+  height: 4vw;
+  left: 3vw;
+}
+.icon1{
+  position: absolute;
+  width: 3.5vw;
+  height: 4.5vw;
+  left: 3vw;
+}
+.jian{
+  position: absolute;
+  right: 2vw;
+  height: 1.3vh;
+  width: 2vw;
+}

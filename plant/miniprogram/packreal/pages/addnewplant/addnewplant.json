@@ -1,0 +1,6 @@
+{"disableScroll":true,
+  "usingComponents": {
+    "returnbtn":"../../../components/returnbtn/returnbtn",
+    "calendar":"../../../components/calendar/calendar"
+  }
+}

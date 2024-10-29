@@ -1,0 +1,56 @@
+/* pages/welcome/welcome.wxss */
+.container{
+margin: auto 0;
+padding: 0;
+width: 100vw;
+height: 100vh;
+background-color:#92DDB1 ;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.title{
+  margin-top: 25vh;
+  margin-bottom: 1.5vh;
+  color: #1A7C31;
+  font-size: 3.9vh;
+  font-family: FZ;
+  letter-spacing: 0.04rem;
+}
+.des{
+  color: #1A7C31;
+  font-size: 1.8vh;
+  font-family: STHeiti Light;
+  letter-spacing: 0.03rem;
+}
+.logo{
+  width: 21vh;
+  height: 20.5vh;
+  margin-top: 2vh;
+}
+.welcome{
+  width: 67.2vw;
+  height: 7vh;
+  background-color:#37AA55 ;
+  color: white;
+  font-size: 2.2vh;
+  border-radius: 20rpx;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.2);
+  margin-top: 15vh;
+  letter-spacing: 00.2rem;
+  font-family: FZ;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.css_animation1 { animation: cssAnimation1 0.5s  ease;} 
+@keyframes cssAnimation1 {
+   from { -webkit-transform: scale(1) translateY(-150px); } 
+   to { -webkit-transform: scale(1)  translateY(0px); } 
+ } 
+ .css_animation { animation: cssAnimation 0.5s  ease;} 
+@keyframes cssAnimation {
+   from { -webkit-transform: scale(1) translateY(60px); } 
+   to { -webkit-transform: scale(1)  translateY(0px); } 
+ } 

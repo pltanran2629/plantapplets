@@ -1,0 +1,135 @@
+/* pages/guide/guide.wxss */
+.container{
+  width: 100%;
+  height: 100%;
+  margin: auto 0;
+  padding: 0;
+}
+swiper{
+  width:100vw;
+  height:100vh;
+}
+.plant{
+  height: 50vh;
+  width: 90vw;
+}
+.img-slide3{
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.swiperone{
+  width: 100%;
+  height: 100%;
+  background-color: #92DDB1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.authou{
+  position: relative;
+}
+.aubtn{
+margin: 0;
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+top: 85%;
+border-radius: 40rpx;
+background-color:#37AA55 ;
+color: white;
+padding:1vh 2.4vw;
+font-size: 1.5vh;
+letter-spacing: 0.02rem;
+letter-spacing: 0.04rem;
+box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.2);
+}
+button::after { border: none; }
+/* 修改轮播图点位置 */
+.wx-swiper-dots.wx-swiper-dots-horizontal {
+  top: 92%;
+}
+.wx-swiper-dots .wx-swiper-dot{
+  width: 16rpx;    /*宽*/
+  height: 16rpx;   /*高*/
+  border-radius: 8rpx;  /*圆角*/
+}
+.wx-swiper-dots .wx-swiper-dot-active{
+  width: 50rpx;    /*宽*/
+  height: 12rpx;   /*高*/
+  border-radius: 10rpx;  /*圆角*/
+}
+.shadow1{
+  width: 100%;
+  height: 10vh;
+  position: absolute;
+  top: 59.2vh;
+  z-index: 0;
+}
+.plant1{
+  height: 52.5vh;
+  width: 89vw;
+  position: absolute;
+  top: 13vh;
+  z-index: 1;
+}
+.phone1{
+  height: 55vh;
+  width: 60vw;
+  position: absolute;
+  top: 10.5vh;
+  z-index: 2;
+}
+.title{
+  color: #1A7C31;
+font-size: 3.4vh;
+position: absolute;
+top: 69.5vh;
+/* letter-spacing: 1rem; */
+white-space: inherit;
+/* font-weight: 500; */
+font-family: FZ;
+}
+.des{
+  color: #1A7C31;
+  font-size: 1.5vh;
+  position: absolute;
+  top: 76vh;
+  letter-spacing: 0.02rem;
+  font-family: FZ;
+}
+.plant2{
+  height: 53vh;
+  width: 90vw;
+  position: absolute;
+  top: 12vh;
+  left: 46%;
+  transform:rotate(-11deg) translateX(-50%);
+  z-index: 1;
+}
+.plant3{
+  height: 57.5vh;
+  width: 89vw;
+  position: absolute;
+  top: 9.2vh;
+  z-index: 1;
+}
+.css_animation { animation: cssAnimation 0.6s  ease; } 
+@keyframes cssAnimation {
+   from { -webkit-transform: scale(0.8) translateY(70px); } 
+   to { -webkit-transform: scale(1)  translateY(0px); } 
+  } 
+
+   .css_animation1 { animation: cssAnimation1 0.6s  ease;} 
+   @keyframes cssAnimation1 {
+      from { -webkit-transform: scale(0.8) translateY(-70px); } 
+      to { -webkit-transform: scale(1)  translateY(0px); } 
+    } 
+    .css_animation2{
+      animation: cssAnimation2 0.6s  ease;
+    }
+    @keyframes cssAnimation2 {
+      from { -webkit-transform: scale(0.2);  } 
+      to { -webkit-transform: scale(1);  } 
+    } 

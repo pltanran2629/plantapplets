@@ -1,0 +1,75 @@
+<view class="container">
+ <image class="bgimg" mode="widthFix" src="{{plantBasic.img}}"></image>
+  <!--  -->
+  <view class="returnbtn" bindtap="return">
+  <returnbtn></returnbtn>
+  </view>
+  <view class="size"  bindtouchmove="down" bindtouchend="stay" animation="{{anim}}">
+   <view class="top">
+    <view wx:if="{{plantBasic.production}}">分布地：{{plantBasic.production}}</view>
+    <view wx:if="{{plantBasic.category}}">{{plantBasic.category}}</view>
+   </view>
+   <view class="cen">
+    <view class="cenfir">
+      <view class="cenfirtit">基本信息</view>
+      <view class="cenfirpla">
+       <view class="cenfirone">
+        <view class="cenfironetit">光照</view>
+        <image src="../../image/plantknow/sun.png"  class="cenfironepic1"></image>
+        <view>{{plantmain.sunlightSimple}}</view>
+      </view>
+      <view class="cenfirone">
+        <view class="cenfironetit">浇水</view>
+        <image src="../../image/plantknow/water.png"  class="cenfironepic2"></image>
+        <view>{{plantmain.wateringSimple}}</view>
+      </view>
+      <view class="cenfirone">
+        <view class="cenfironetit">温度</view>
+        <image src="../../image/plantknow/tem.png"  class="cenfironepic3"></image>
+        <view>{{plantmain.temp}}</view>
+      </view>
+      </view>
+    </view>
+    <view class="censec">
+      <view class="censeccn">{{plantBasic.name}}</view>
+      <view class="censecen">{{plantBasic.nameEn}}</view>
+      <view class="censecdec">{{plantBasic.desc}}</view>
+    </view>
+    <view class="centhi">
+     <view class="centhifi" bindtap="scanage" wx:if="{{!virexist}}">重新扫描</view>
+     <view class="{{virexist?'centhifi':'centhise'}}" bindtap="collcateask" data-plantid="{{plantBasic.id}}">{{star?"已收藏":"收藏"}}</view>
+     <view class="centhise" data-plantid="{{plantBasic.id}}" bindtap="ifaddgar" wx:if="{{virexist}}">加入我的花园</view>
+    </view>
+   </view>
+  </view>
+</view>
+<view class="model" wx:if="{{colsuc}}">
+  <view class="modelcon">{{modelcon}}</view>
+</view>
+<view class="model" wx:if="{{addgarmodel}}">
+  <view class="modelgar">
+  <view class="modeltop">虚拟花园已经有{{isgarden}}株{{plantBasic.name}}，你是否要加入？</view>
+  <view class="choseifaddgar">
+       <view class="delet" bindtap="close">取消</view>
+       <view class="sure" data-plantid="{{plantBasic.id}}" bindtap="addgar">加入</view>
+  </view>
+  </view>
+</view>
+<view class="model" wx:if="{{askdel}}">
+  <view class="modelgar">
+  <view class="modeltop">你是否要取消收藏{{plantBasic.name}}？</view>
+  <view class="choseifaddgar">
+       <view class="delet" bindtap="close">关闭</view>
+       <view class="sure" data-plantid="{{plantBasic.id}}" bindtap="collcate">确定</view>
+  </view>
+  </view>
+</view>
+ <!-- -->
+<view class="introduction" wx:if="{{introduct}}">
+ <view class="introductfirst" wx:if="{{introductfir}}">
+   <view class="firstintrotop"></view>
+   <view class="firstintrojian">↓</view>
+   <view class="firstintrotext">可以点击 <text>收藏</text> 进行植物收藏，在个人中心收藏夹里面可以看到哦。<view wx:if="{{virexist}}"> <text>点击加入我的花园</text> 可以为植物<text>浇水、施肥</text>看植物各个阶段的生长情况哦!</view></view>
+ </view>
+ <view class="introknow" bindtap="introduct">知道啦</view>
+</view>

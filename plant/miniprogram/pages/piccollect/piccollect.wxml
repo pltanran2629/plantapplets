@@ -1,0 +1,109 @@
+<view class="container">
+  <view class="size">
+    <view class="sizetop">
+      <image class="whitereturn" bindtap="return" wx:if="{{isshowreturn}}" src="../../image/piccollect/whitereturn.png"></image>
+    </view>
+    <view class="sizecon">
+      <view class="sizeconvir {{activetab==0?'active':'notactvir'}}" bindtap="virgar">
+        <view>虚拟花园</view>
+      </view>
+      <view class="sizeconreal {{activetab==1?'active':'notactreal'}}" bindtap="realgar">
+        <view>真实花园</view>
+      </view>
+    </view>
+    <view class="sizebot">
+      <view class="realgar">
+        <scroll-view scroll-y="true" class="realgargenscoll">
+          <view class="realtime">
+            <view>录入时间 </view>
+            <!-- <image src="../../image/index/jianbai.png"></image> -->
+          </view>
+          <view class="realcol" wx:if="{{activetab==0}}">
+            <block wx:for="{{virUnlock}}" wx:key="virunlock">
+              <view class="realcolone" data-cid="{{item.cid}}" bindtap="virshowpic">
+                <image class="colonebg" src="https://hotpotman.oss-cn-beijing.aliyuncs.com/basic/bggreen.png"></image>
+                <image class="virfolimage" src="{{item.plantImg}}"></image>
+                <view class="coldes">
+                  <view class="namecn">{{item.name}}</view>
+                  <view class="nameen">{{item.nameEn}}</view>
+                </view>
+              </view>
+            </block>
+            <block wx:for="{{virLock}}" wx:key="virlock">
+              <view class="realcolone" data-myvirtualid='{{item.myVirtualId}}' bindtap="tovirtualpage">
+                <image class="colonebg" src="https://hotpotman.oss-cn-beijing.aliyuncs.com/basic/bggray.png"></image>
+                <image class="virfolimage" src="{{item.plantImg}}"></image>
+                <view class="coldes">
+                  <view class="namecn">{{item.name}}</view>
+                  <view class="nameen">{{item.nameEn}}</view>
+                </view>
+              </view>
+            </block>
+            <view class="warning" wx:if="{{(virUnlock.length==0)&&(virLock.length==0)}}">暂时还没有虚拟植物图鉴，快去添加叭</view>
+          </view>
+
+          <view class="realcol" wx:if="{{activetab==1}}">
+            <block wx:for="{{realUnlock}}" wx:key="realUnlock">
+              <view class="realcolone" data-cid="{{item.cid}}" bindtap="realshowpic">
+                <image class="colonebg" src="https://hotpotman.oss-cn-beijing.aliyuncs.com/basic/bggreen.png"></image>
+                <image class="realfolimage" src="{{item.plantImg}}"></image>
+                <view class="coldes">
+                  <view class="namecn">{{item.name}}</view>
+                  <view class="nameen">{{item.nameEn}}</view>
+                </view>
+              </view>
+            </block>
+            <block wx:for="{{realLock}}" wx:key="realLock">
+              <view class="realcolone" data-diaryid="{{item.diaryId}}" bindtap="toplantdiary">
+                <image class="colonebg" src="https://hotpotman.oss-cn-beijing.aliyuncs.com/basic/bggray.png"></image>
+                <image class="realfolimage" src="{{item.plantImg}}"></image>
+                <view class="coldes">
+                  <view class="namecn">{{item.name}}</view>
+                  <view class="nameen">{{item.nameEn}}</view>
+                </view>
+              </view>
+            </block>
+            <view class="warning" wx:if="{{(realUnlock.length==0)&&(realLock.length==0)}}">暂时还没有真实植物图鉴，快去添加叭</view>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="model" wx:if="{{virshowpic}}">
+  <view class="modelbg">
+    <image class="virgreenbg" src="https://hotpotman.oss-cn-beijing.aliyuncs.com/basic/virgreenbg.png"></image>
+    <image class="virgreengong" src="https://hotpotman.oss-cn-beijing.aliyuncs.com/basic/virgreengonghu.png"></image>
+    <image class="virgreenfol" src="{{vircard.plantImg}}"></image>
+    <view class="plantname">{{vircard.name}}</view>
+    <view class="bottom">
+      <view class="savaimage" bindtap="closemodel">返回</view>
+      <view class="savaimage" bindtap="saveimage">保存图片</view>
+    </view>
+  </view>
+</view>
+
+<view class="model" wx:if="{{realshowpic}}">
+  <view class="modelbg">
+    <image animation="{{anim}}" class="realgreenbg" src="https://hotpotman.oss-cn-beijing.aliyuncs.com/basic/realgreenbg.png"></image>
+    <image animation="{{anim}}" class="realgreengong" src="https://hotpotman.oss-cn-beijing.aliyuncs.com/basic/realgreengonghu.png"></image>
+    <image animation="{{anim}}" class="realgreenfol" src="{{realcard.plantImg}}"></image>
+    <view animation="{{anim}}" class="plantname">{{realcard.name}}</view>
+    <view class="bottom">
+      <view class="savaimage" bindtap="closemodel">返回</view>
+      <view class="savaimage" bindtap="saveimage">保存图片</view>
+    </view>
+  </view>
+</view>
+<canvas id="cavansId" hidden="{{canvashidden}}" type="2d">
+</canvas>
+
+<view class="introduction" wx:if="{{introduct}}">
+  <view class="introductfirst" wx:if="{{introductfir}}">
+    <view class="firstintrotop"></view>
+    <view class="firstintrojian">↑</view>
+    <view class="firstintrotext">可以查看 <text>虚拟植物、真实植物</text> 的植物图鉴哦，解锁的图鉴可以 <text>点击</text> 卡牌 <text>保存到手机</text> ，未解锁的图鉴还要加油完成任务哦</view>
+  </view>
+  <view class="introknow" bindtap="introduct">知道啦</view>
+</view>

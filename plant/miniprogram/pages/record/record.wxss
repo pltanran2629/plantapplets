@@ -1,0 +1,241 @@
+/* pages/record/record.wxss */
+.container{
+  width: 100vw;
+  height: 100vh;
+  background-image:linear-gradient(#31AD77,#ffffff);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.returnarea{
+  width: 85%;
+  padding-top: 8vh;
+}
+.size{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.top{
+  background-color: #DCFFE8;
+  width: 80vw;
+  height: 20.4vh;
+  border-radius: 10.2vh;
+  margin-top: 1vh;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.15);
+}
+.cen{
+  width: 90vw;
+  background-color: #fff;
+  height: 82vh;
+  margin-top: -17vh;
+  border-radius: 6vh;
+  box-shadow: 0 0 40rpx rgba(0, 0, 0, 0.15);
+}
+.cencen{
+  margin: 4vh 2vw 2vh 2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.record{
+  color: #62A37E;
+  margin-bottom: 2vh;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.recordtit{
+  font-size: 1.9vh;
+}
+.recordtime{
+  font-size: 1.3vh;
+  letter-spacing: 0.04rem;
+}
+.recordjiantou{
+  width: 2.4vw;
+  height: 0.8vh;
+}
+.collist{
+  width: 100%;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 5vh;
+}
+.itemone{
+  width: 80vw;
+  height: 11vh;
+  border-radius: 30rpx;
+  background-color: #348454;
+  margin: 1.5vh 0;
+  position: relative;
+}
+.listoneimage{
+  width: 80vw;
+  height: 11vh;
+  border-radius: 30rpx;
+  transition:  width 0.5s ease;
+}
+.listonejianbian{
+  height: 11vh;
+  width: 50vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 30rpx;
+  background: linear-gradient(to right , #348454, rgba(255, 255,255,0.0));
+  color: white;
+  font-size: 3vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.listonetime{
+  padding: 0 1vw 0.4vh 3vw;
+}
+.listonename{
+  padding: 0 1vw 1vh 3vw;
+}
+.listonexing{
+  width: 6vw;
+  height: 2.6vh;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  /* right: 5.5vw; */
+  transition:opacity 0.4s ease;
+  padding: 5.5vw;
+}
+.unfold{
+  width: 63vw;
+  transition: width 0.4s;
+}
+.model{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  background-color: rgba(96, 96, 96, 0.37);
+}
+.modelcon{
+  width: 65.4vw;
+  height: 16.5vh;
+  padding: 1vh 4vw;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #fff;
+  border-radius: 20rpx;
+  box-shadow: 0 0 40rpx rgba(0, 0, 0, 0.15);
+  font-size: 1.5vh;
+  display: flex;
+  flex-direction: column;
+justify-content:space-around;
+align-items: center;
+color: #0E591C;
+font-family: FZ;
+}
+.modeltop{
+  margin-top: 6vh;
+}
+.modelbot{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  height: 4vh;
+  margin-top: 4vh;
+}
+.close,.sure{
+  height: 4vh;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-top: 3rpx solid #757575;
+}
+.close{
+  color: #757575;
+  border-right: 3rpx solid #757575;
+}
+.modelsuc{
+  width: 50vw;
+  height: 13vh;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #fff;
+  opacity: 0.8;
+  color: #348454;
+  font-size: 2.8vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10rpx;
+  letter-spacing: 0.05rem;
+}
+.introduction{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 9999999;
+}
+.firstintrotop{
+  width: 85vw;
+  height: 15vh;
+  position: absolute;
+  left:50%;
+  transform: translateX(-50%);
+  top: 23vh;
+  border: 10rpx white dashed;
+}
+.firstintrojian{
+  color: white;
+  font-size: 8vh;
+  position: absolute;
+  left:50%;
+  transform: translateX(-50%);
+  top: 14vh;
+}
+.firstintrotext{
+ font-size: 2vh;
+ color: white;
+ position: absolute;
+ left:50%;
+ transform: translateX(-50%);
+ top: 10vh;
+ width: 65vw;
+ font-family: ST;
+}
+.firstintrotext>text,.secintrotext>text{
+  color: #b5ffc7;
+  /* font-weight: 520; */
+}
+.introknow{
+  font-size: 2.3vh;
+  color: white;
+  position: absolute;
+  right: 8vw;
+  bottom: 6vh;
+  width: 15vw;
+  /* height: 4vh; */
+  padding: 1vh 3vw;
+  border: 5rpx solid white;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

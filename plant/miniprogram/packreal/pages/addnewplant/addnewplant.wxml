@@ -1,0 +1,58 @@
+<view class="container">
+<scroll-view scroll-y="{{sysScroll}}">
+  <returnbtn class="return" bindtap="return"></returnbtn>
+  <view class="context">
+    <view  class="contextone">
+     <image class="plantimg" src="{{photourl}}"></image>
+    </view>
+    <view  class="contexttwo">
+    <input class="plantname" bindinput='getInputValue'  bindfocus="onfocus" bindblur="onblur" value="{{plantname}}"/>
+    </view>
+    <view class="contextthree">
+     <view class="choosedatatitle">
+      <view class="choosedatatitlecn">请选择种植日期</view>
+      <view class="choosedatatitleen">Please select a planting date</view>
+     </view>
+     <view class="choosedata">
+      <calendar bind:change="dateChange" spot="{{spot}}" />
+     </view>
+    </view>
+    <view class="contextfour">
+    <view class="choosedatatitle">
+      <view class="choosedatatitlecn">请选择植物状态</view>
+      <view class="choosedatatitleen">Please select plant state</view>
+     </view>
+     <view class="phase">
+     <block wx:for="{{phase}}" wx:key="phase">
+      <view  class="phase1" data-index='{{index}}' bindtap="showphase">
+        <view class="{{index==selectphase?'card2':'card1'}}">
+         <text class="{{index==selectphase?'card2text':'card1text'}}">{{item.phasename}}</text><text class="card1text1">{{item.phasenameano}}</text>   
+         <text wx:if="{{index==selectphase}}" class="card2text1">{{item.phasedetail}}</text>
+          <view wx:if="{{index==selectphase}}" class="circle">
+          <image class="circleimg" src="../../../image/addnewplant/jiantou.png"></image>
+          </view>
+        </view>      
+      </view>
+     </block>
+     </view>
+    </view>
+    <view class="contextsix">
+      <view class="choosedatatitle">
+      <view class="choosedatatitlecn">写下植物的点滴</view>
+      <view class="choosedatatitleen">Write down the plants</view>
+     </view>
+    <textarea bindinput="remarkInputAction" class="contextsixtext" cursor-spacing="150" placeholder="绿植日记~"></textarea>
+    </view>
+    <view class="contextfive">
+      <view class="contextfiveone" bindtap="chooseagain">重新选择照片</view>
+      <view class="contextfivetwo" bindtap="submitinforma">提交植物数据</view>
+    </view>
+  </view>
+</scroll-view>
+</view>
+
+<view class="model" wx:if="{{isshowmodel}}">
+  <view class="modelbox">
+   录入成功
+  </view>
+</view>

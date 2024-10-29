@@ -1,0 +1,104 @@
+<image mode="aspectFill" class="bgimage" src="https://hotpotman.oss-cn-beijing.aliyuncs.com/basic/virtualbg.png"> </image>
+<view class="container">
+  <view class="size">
+    <view class="sizetop">
+      <returnbtn bindtap="return"></returnbtn>
+      <view class="phase">{{msg.plantBasic.plantBasic.name}}：{{msg.stageName}}</view>
+    </view>
+    <view class="sizecen">
+      <view class="sizecenleft">
+        <view class="watervo">
+          <view class="watervobg">
+            <view class="watervopro" style="height: {{(nowfer/msg.totalFertilizer)*15}}vh;"></view>
+            <view class="watervoprotext">肥量 {{nowfer}}/{{msg.totalFertilizer}}</view>
+          </view>
+        </view>
+        <view class="fervo">
+          <view class="watervobg">
+            <view class="fervopro" style="height: {{(nowwater/msg.totalWater)*22}}vh;"></view>
+            <view class="watervoprotext">水量 {{nowwater}}/{{msg.totalWater}}</view>
+          </view>
+        </view>
+        <view bindtap="tasktext" class="task {{taskopen?'open':''}}">我当前已经成长<text style="writing-mode:horizontal-tb;">{{msg.maturityRate}}</text>%，我想要快点长大！</view>
+      </view>
+      <view class="sizecencen">
+        <!-- -->
+        <image class="plant {{shutree?'swing':''}}" bindanimationend="treeend" src="{{msg.stageImg}}"></image>
+        <image style="opacity: {{bottle?'1':'0'}};" bindanimationstart="bottlestart" bindanimationend="bottleend" class="waterbot {{tree?'bottle-fadein':''}}" src="../../image/virtual/pot.png"></image>
+        <image class="shuidi {{waterbool?'shack':''}}" wx:if="{{waterbool}}" src="../../image/virtual/shuidi.png"></image>
+        <image class="daizi {{tree1?'ferfall':''}}" bindanimationstart="ferstart" bindanimationend="ferend" style="opacity: {{soil?'1':'0'}};" src="../../image/virtual/daizi.png"></image>
+        <image class="nitu {{soilone?'shack1':''}}" wx:if="{{soilone}}" src="../../image/virtual/soil.png"></image>
+      </view>
+      <view class="sizecenright">
+        <view>
+          <image bindtap="watering" class="righticon" src="{{(canwater&&msg.remainWater)?'../../image/virtual/water.png':'../../image/virtual/waterfalse.png'}}"></image>
+        </view>
+        <view wx:if="{{(!canwater)&&msg.remainWater}}" class="waterdjs">{{waterdjs.hour}}:{{waterdjs.min}}:{{waterdjs.sec}}</view>
+        <view>
+          <image class="righticon ferimage" bindtap="fertilizer" src="{{(canfer&&msg.remainFertilizer)?'../../image/virtual/fer.png':'../../image/virtual/ferfalse.png'}}"></image>
+        </view>
+        <view wx:if="{{(!canfer)&&msg.remainFertilizer}}" class="ferdjs">{{ferdjs.hour}}:{{ferdjs.min}}:{{ferdjs.sec}}</view>
+        <view>
+          <image class="righticon" src="../../image/virtual/list.png" bindtap="tovirlist"></image>
+        </view>
+        <view>
+          <image class="righticon" src="../../image/virtual/col.png" bindtap="tocol"></image>
+        </view>
+        <view>
+          <image class="righticon" src="../../image/virtual/know.png" bindtap="toknow"></image>
+        </view>
+        <!-- <view class="successunlock" wx:if="{{msg.maturityRate==100}}">您已成功解锁该植物哟~</view> -->
+      </view>
+    </view>
+    <view class="sizebot">
+      <view>
+        <image bindtap="ar" src="../../image/virtual/ar.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- -->
+<view class="introduction" wx:if="{{introduct}}">
+  <view class="introductfirst" wx:if="{{introductfir}}">
+    <view class="firstintrotop"></view>
+    <view class="firstintrojian">→</view>
+    <view class="firstintrotext">在这里，可以 <text>点击</text> 根据倒计时提示，给植物 <text>浇水、施肥</text> ，点击可以查看植物图鉴和植物列表</view>
+  </view>
+  <view class="introductsec" wx:if="{{introductsec}}">
+    <view class="secintrotop"></view>
+    <view class="secintrojian">↓</view>
+    <view class="secintrotext"><text>点击</text> 可以进行植物AR体验哦</view>
+  </view>
+  <view class="introknow" bindtap="introduct">知道啦</view>
+</view>
+
+<view class="model" wx:if="{{unlock}}">
+  <view class="continue">未解锁图鉴，需继续种植~</view>
+  <view bindtap="close" class="closelock">
+    <view>×</view>
+  </view>
+</view>
+
+<view class="model" wx:if="{{successplant}}">
+  <view class="successplant">恭喜你种植成功
+    <view class="collectpic" bindtap="tocol">点击查看图鉴</view>
+  </view>
+  <view bindtap="close" class="closelock">
+    <view>×</view>
+  </view>
+</view>
+
+<view class="model1" wx:if="{{virshowpic}}">
+  <view class="modelbg">
+    <image class="virgreenbg" src="https://hotpotman.oss-cn-beijing.aliyuncs.com/basic/virgreenbg.png"></image>
+    <image class="virgreengong" src="https://hotpotman.oss-cn-beijing.aliyuncs.com/basic/virgreengonghu.png"></image>
+    <image class="virgreenfol" src="{{vircard.plantImg}}"></image>
+    <view class="plantname">{{vircard.name}}</view>
+    <view class="bottom">
+      <view class="savaimage" bindtap="close">返回</view>
+      <view class="savaimage" bindtap="saveimage">保存图片</view>
+    </view>
+  </view>
+</view>
+<canvas id="cavansId" hidden="{{canvashidden}}" type="2d">
+</canvas>

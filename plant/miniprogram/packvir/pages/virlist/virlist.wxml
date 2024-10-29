@@ -1,0 +1,67 @@
+<image mode="aspectFill" class="bgimage" src="https://hotpotman.oss-cn-beijing.aliyuncs.com/basic/virtualbg.png"> </image>
+<view class="container">
+  <view class="returnbtn">
+   <returnbtn bindtap="return"></returnbtn>
+  </view>
+  <view class="size">
+   <scroll-view scroll-y="{{sysScroll}}" >
+   <view class="scollcon">
+      <view class="sizetop">
+      <view class="sizetopleft">
+        <view class="sizetopleft1">最近收录</view>
+        <view class="sizetopleft2">Recently included</view>
+      </view>
+      <view class="sizetopright" bindtap="changeorder">
+        <view class="sizetoprightmature">{{ordertext}}</view>
+        <image class="sizetoprightimg" src="../../../image/index/15.png"></image>
+      </view>
+      </view>
+      <view class="sizebot">
+      <block wx:for="{{virlist}}" wx:key="virlist">
+        <view class="sizebotone" data-myvirid="{{item.myVirtualId}}" bindtap="tovir" bindtouchstart="touchstart" bindtouchend="touchend">
+          <view class="sizebotonename">{{item.plantBasic.plantBasic.name}} <text>{{item.plantBasic.plantBasic.nameEn}}</text></view>
+          <view class="sizebotonecard">
+            <view class="deleteplant" data-mature="{{item.maturityRate}}" catchtap="deletplant" style="opacity: {{openid==item.myVirtualId&&open?'1':'0'}};">删除植物</view>
+            <view class="sizebotonecardtop {{openid==item.myVirtualId&&open?'movedis':''}}">   
+              <image class="oneimg" src="{{item.canwater&&item.remainWater>0?'../../image/virtual/water.png':'../../image/virtual/waterfalse.png'}}"></image>
+              <view wx:if="{{!item.canwater}}" class="watertimer">{{item.watertimer.hou}}:{{item.watertimer.min}}:{{item.watertimer.sec}}</view>
+              <image class="oneimg" src="{{item.canfer&&item.remainFertilizer>0?'../../image/virtual/fer.png':'../../image/virtual/ferfalse.png'}}"></image>
+              <view wx:if="{{!item.canfer}}" class="fertimer">{{item.fertimer.hou}}:{{item.fertimer.min}}:{{item.fertimer.sec}}</view>
+              <image class="flower" src="{{item.stageImg}}"></image>
+            </view>
+           
+            <view class="sizebotonecardcen">
+             <view>载入时间：{{item.createTime}}</view>
+             <view>生长阶段：{{item.stageName}}</view>
+            </view>          
+          </view>
+        </view>
+     </block>
+      </view>
+    </view>
+   </scroll-view>
+  </view>
+</view>
+<view class="model"  wx:if="{{ismodel}}">
+ <view class="modelcon">
+  <view class="modeltop">{{content}}</view>
+  <view class="modelbot">
+   <view bindtap="close" class="close">关闭</view>
+   <view bindtap="sure" class="sure">确定</view>
+  </view>
+  </view>
+</view>
+<view class="model" wx:if="{{success}}">
+ <view class="modelsuc">
+  <view>删除成功</view>
+  </view>
+</view>
+<!-- -->
+<view class="introduction"  wx:if="{{introduct}}" >
+ <view class="introductfirst" wx:if="{{introductfir}}">
+   <view class="firstintrotop"></view>
+   <view class="firstintrojian">↓</view>
+   <view class="firstintrotext">点击可以查看虚拟花园植物， <text>上下</text> 滑动即可删除哟</view>
+ </view>
+ <view class="introknow" bindtap="introduct">知道啦</view>
+</view>

@@ -1,0 +1,57 @@
+<!--pages/record/record.wxml-->
+<view class="container">
+<view class="returnarea">
+   <returnbtn bindtap="return"></returnbtn>
+</view>   
+   <view class="size">
+      <view class="top"></view>
+      <view class="cen">
+       <view class="cencen">
+        <view class="record">
+          <view class="recordtit">收藏记录</view>
+          <view class="recordtime">收藏时间
+          <!-- <image class="recordjiantou" src="../../image/index/15.png"></image> -->
+          </view>
+        </view>
+        <scroll-view scroll-y="true" style="height: 70vh;">
+        <view class="collist">
+        <block wx:for="{{collist}}" wx:key="list">
+          <view class="itemone" data-id="{{item.plantId}}" data-name="{{item.name}}" bindtap="toknow" bindtouchstart="touchstart" bindtouchend="touchend">
+            <image class="listoneimage {{open&&moveid==item.plantId?'unfold':''}}" mode="center" src="{{item.plantImg}}"></image>
+            <view class="listonejianbian">
+              <view class="listonetime">{{item.starTime}}</view>
+              <view class="listonename">{{item.name}}</view>
+            </view>
+            <image class="listonexing" data-id="{{item.plantId}}" data-name="{{item.name}}" catchtap="deletecol" style="opacity: {{open&&moveid==item.plantId?'1':'0'}};" src="../../image/record/xing.png"></image>
+          </view>
+        </block>
+        </view>  
+        </scroll-view>
+      </view>
+      </view>
+   </view>
+</view>
+<view class="model"  wx:if="{{ismodel}}">
+ <view class="modelcon">
+  <view class="modeltop">你是否要取消收藏{{deletname}}？</view>
+  <view class="modelbot">
+   <view bindtap="close" class="close">关闭</view>
+   <view bindtap="sure" class="sure">确定</view>
+  </view>
+  </view>
+</view>
+<view class="model" wx:if="{{success}}">
+ <view class="modelsuc">
+  <view>取消成功</view>
+  </view>
+</view>
+ <!--
+ -->
+<view class="introduction" wx:if="{{introduct}}">
+ <view class="introductfirst" wx:if="{{introductfir}}" >
+   <view class="firstintrotop"></view>
+   <view class="firstintrojian">↓</view>
+   <view class="firstintrotext">点击可以查看收藏的植物， <text>左右滑动</text> 即可取消收藏哟</view>
+ </view>
+ <view class="introknow" bindtap="introduct">知道啦</view>
+</view>

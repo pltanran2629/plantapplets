@@ -1,0 +1,4 @@
+<!--components/returnbtn/returnbtn.wxml-->
+<view>
+ <image class="returnbtn"  src="../../image/tabbar/return.png"></image>
+</view>

@@ -1,0 +1,6 @@
+<view class="container">
+<view class="title css_animation1">植屿日记</view>
+<view class="des css_animation1">一起开启你的植物之旅吧</view>
+<image class="logo" src="https://hotpotman.oss-cn-beijing.aliyuncs.com/basic/logo.png"></image>
+<view class="welcome css_animation" bindtap="topage">欢迎使用</view>
+</view>

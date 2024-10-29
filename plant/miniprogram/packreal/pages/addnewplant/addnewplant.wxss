@@ -1,0 +1,241 @@
+/* packreal/pages/addnewplant/addnewplant.wxss */
+.container{
+  width: 100vw;
+  height: 100vh;
+  background-color:#49B176;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+scroll-view{
+  width: 90vw;
+  height:91vh;
+  /* background-color: #fff; */
+  border-radius: 40rpx;
+  margin-top: 100rpx;
+}
+.context{
+  margin-top: 114rpx;
+  background-color: #BFE2BF;
+  width: 100%;
+  height: 2315rpx;
+  border-radius: 40rpx;
+  margin-bottom: 55rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contextone{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 600rpx;
+}
+.plantimg{
+  width: 550rpx;
+  height: 660rpx;
+  border: 25rpx white solid;
+  box-sizing:border-box;
+  border-radius: 130rpx;
+  box-shadow: 0 0 50rpx rgba(0, 0, 0, 0.15);
+  position: absolute;
+  top: -100rpx;
+}
+.contexttwo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.plantname{
+  width: 490rpx;
+  height: 74rpx;
+  background-color: #fff;
+  border-radius: 40rpx;
+  padding: 2rpx 20rpx;
+  text-align: center;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.2);
+  color: #1A7C31;
+  font-size: 40rpx;
+  font-family:FZ;
+}
+.contextthree{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50rpx;
+  width: 100%;
+}
+.choosedatatitle{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 75%;
+  color: #0B4F18;
+}
+.choosedatatitlecn{
+  font-size: 40rpx;
+}
+.choosedatatitleen{
+  font-size: 18rpx;
+}
+.choosedata{
+  padding-top: 15rpx;
+  height: 272rpx;
+  width: 100%;
+  z-index: 2;
+}
+.contextfour{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.phase{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 470rpx;
+  width: 90%;
+  margin-bottom: 45rpx;
+}
+.phase1{
+  width: 33%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.card1{
+  width: 173rpx;
+  height: 212rpx;
+  background-color: #f9f9f9;
+  border-radius: 20rpx;
+  box-shadow: 0 0 15rpx rgba(0, 0, 0, 0.15);
+  color: #1A7C31;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card1text{
+  font-size: 40rpx;
+}
+.card1text1{
+  font-size: 20rpx;
+}
+.card2{
+  height: 380rpx;
+  width: 173rpx;
+  background-color: #FFC764;
+  border-radius: 20rpx;
+  box-shadow: 0 0 15rpx rgba(0, 0, 0, 0.15);
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10rpx;
+  position: relative;
+  transition: height 150ms;
+}
+.card2text{
+  font-size: 48rpx;
+  padding-bottom: 20rpx;
+
+}
+.card2text1{
+  line-height: 1.5em;
+  font-size: 16rpx;
+  text-align: left;
+  padding:18rpx;
+}
+.circle{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -60rpx;
+  background-color: #FFC764;
+}
+.circleimg{
+  width: 120rpx;
+  height: 120rpx;
+}
+.contextfive{
+  /* position: absolute; */
+  position: relative;
+  bottom: -55rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 90%;
+  font-size: 26rpx;
+}
+.contextfiveone{
+ color: #1A7C31;
+ background-color: white;
+ height:75rpx ;
+ width: 220rpx;
+ text-align: center;
+ border-radius: 37rpx;
+ box-shadow:  0 0 20rpx rgba(0, 0, 0, 0.15);
+ line-height: 3.1em;
+}
+.contextfivetwo{
+  color: white;
+  background-color: #FFC764;
+  height:75rpx ;
+  width: 220rpx;
+  text-align: center;
+  border-radius: 37rpx;
+  box-shadow:  0 0 20rpx rgba(0, 0, 0, 0.15);
+  line-height: 3.1em;
+}
+.contextsix{
+  margin-top: 15rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.contextsixtext{
+  width: 75%;
+  background-color: #f9f9f9;
+  padding: 30rpx;
+ border-radius: 20rpx;
+ margin-top: 60rpx;
+ margin-bottom: 30rpx;
+ color: #1A7C31;
+box-shadow: 0 0 25rpx rgba(0, 0, 0, 0.2);
+/* font-family:FZ; */
+}
+.model{
+  width: 100%;
+  height: 100%;
+  background-color: 	rgba(96,96,96,0.5);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.modelbox{
+  width: 500rpx;
+  height: 200rpx;
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 40rpx;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  color: #116321;
+  line-height: 200rpx;
+  font-family: FZ;
+  text-align: center;
+}

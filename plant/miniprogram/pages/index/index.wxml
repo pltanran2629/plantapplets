@@ -1,0 +1,114 @@
+<view class="container"  >
+    <view class="topplace"catchtap="onblur">
+      <view class="search">
+        <view class="searscope" catchtap="onblur">
+            <view class="searscopebai {{selected==0?'choselist1':''}}" bindtap="chooselist" data-searid="1" wx:if="{{selected==0||list==1}}">百科</view>  
+            <view class="searscopebai {{selected==0?'choselist2':''}}" bindtap="chooselist" data-searid="2" wx:if="{{selected==0||list==2||selected==1}}">虚拟</view>  
+            <view class="searscopebai {{selected==1?'choselist2':''}}" bindtap="chooselist" data-searid="1" wx:if="{{selected==1||list==3}}">百科</view>  
+        </view>
+         <image class="searchxia {{selected?'':'transform'}}" src="../../image/index/jianbai.png"></image>
+        <input placeholder="搜索百科或虚拟植物" bindinput="search" bindfocus="search" bindblur="onblur" class="textarea {{isshow?'textareazhi':''}}"/>
+        <image class="searimg" bindtap="searchimg"  src="../../image/index/sear.png"></image>
+        <view class="answer" wx:if="{{isshow}}">
+         <block wx:for="{{searlist}}" wx:key="searlist">
+          <view class="answerone" bindtouchstart="topage" wx:if="{{index<6}}" data-myvirplantid="{{item.myVirtualId}}" data-knowledgename="{{item.plantBasic.name}}">
+            <image class="answeroneimg" src="../../image/realgarden/sear.png"></image>
+            <view wx:if="{{list==1}}">{{item.plantBasic.name}}</view>
+            <view wx:if="{{list==2}}">{{item.plantBasic.plantBasic.name}}</view>
+          </view>
+         </block> 
+        </view>
+      </view>
+      <view class="font" catchtap="onblur">
+        <view class="fontbig">我的植物</view>
+        <view class="fontsmall">My virtual plant</view>
+      </view>
+    </view>
+    <view class="cenplace"  catchtap="onblur">
+      <view class="borderwan"></view>
+        <view class="centop">
+        <view class="centopleft">
+        <text>最近收录</text>
+        <text  class="centopleftsmall">Recently included</text>
+        </view>
+        <view class="centopright" bindtap="changeorder"><text>{{ordertext}}</text>
+        <image class="chengshu" src="../../image/index/15.png"></image>
+        </view>
+        </view>
+        <view class="cencen">
+          <swiper class='swiperClass'  current="{{currentindex}}" next-margin="200rpx" bindchange="bindchange" style='height:100%;width:100%;'>
+          <block wx:for="{{virlist}}" wx:key="index">
+            <swiper-item>
+            <view class="{{swiperIndex == index? 'active' : 'quiet'}}" data-myvirtualplant="{{item.myVirtualId}}" bindtap="tovirtual">
+              <view  class="slide-image">
+                <view class="swipertop">
+                  <view class="swipertoptext">{{item.createTime}}<view>你种植了</view></view>
+                  <image class="swipertopimg" src="{{item.imgPrepared}}"></image>
+                  <!--  -->
+                </view>
+                <view class="swipercen">
+                  <view class="swipercenbig" style="font-size:{{item.scienceName.length>3?'2.2vh':' 3.125vh'}}">{{item.scienceName}}</view>
+                  <view class="swipercensmall">{{item.nameEn}}</view>
+                </view>
+                <view class="swiperbot">
+                  <view class="swiperbotitem">
+                  <view class="swiperbottop">生长度</view>
+                  <view class="swiperbotcen">{{item.maturityRate}}</view>
+                  </view>
+                  <view class="swiperbotitem">
+                  <view class="swiperbottop">最近养护剩余</view>
+                  <view class="swiperbotcen">{{item.waterfertime}}</view>
+                  </view>
+                  <view class="swiperbotitem">
+                  <view class="swiperbottop">状态</view>
+                  <view class="swiperbotcen">
+                    <image class="shuidiimg" src="https://hotpotman.oss-cn-beijing.aliyuncs.com/basic/shuidi.png"></image>
+                  </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+            </swiper-item>
+          </block>
+          </swiper>
+        </view>
+      <view class="cenbot">
+       <view class="cenbotitem">
+          <view class="cenbotitemsmall">虚拟植物</view>
+          <view class="cenbotitembig"><text>{{virPlantNum}}</text>种</view>
+        </view>
+        <view class="cenbotitem">
+          <view class="cenbotitemsmall">真实植物</view>
+          <view class="cenbotitembig"><text>{{realPlantNum}}</text>种</view>
+        </view>
+        <view class="cenbotitem">
+          <view class="cenbotitemsmall">图鉴植物</view>
+          <view class="cenbotitembig"><text>{{collectionNum}}</text>种</view>
+        </view>
+      </view>
+      <view class="btnpic">
+      <image bindtap="tocamera" class="takepic" src="https://hotpotman.oss-cn-beijing.aliyuncs.com/basic/takebtn.png"></image>
+      </view>
+    </view>
+</view>
+<view class="introduction" wx:if="{{introduct}}">
+  <view class="firstintro" wx:if="{{introductfir}}">
+    <view class="firstintrotop"></view>
+    <view class="firstintrojian">↑</view>
+    <view class="firstintrotext">点击可选择搜索 <text>植物百科</text> 和 <text>虚拟花园</text> 中的植物哦</view>
+  </view>
+  <view class="secintro" wx:if="{{introductsec}}">
+    <view class="secintrotop"></view>
+    <view class="secintrojian">↓</view>
+    <view class="secintrotext">点击选择我的 <text>虚拟植物</text> 进行浇水施肥植物养护吖</view>
+  </view>
+  <view class="thirdintro" wx:if="{{introductthir}}">
+    <view class="thirdintrotop"></view>
+    <view class="thirdintrojian">↓</view>
+    <view class="thirdintrotext"><text>点击可扫描</text> 身边的植物哦</view>
+  </view>
+  <view class="introknow" bindtap="introducts">知道啦</view>
+</view>
+
+
+

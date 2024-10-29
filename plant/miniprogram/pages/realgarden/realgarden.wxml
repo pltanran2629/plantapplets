@@ -1,0 +1,77 @@
+<view class="container">
+  <view class="size">
+    <view class="allcontent">
+    <view class="centop" >
+       <view class="centopfirst" catchtap="inputblur">
+        <text>添加日期𠄌</text>
+        <!-- <image class="centopfirstimg" src="../../image/index/15.png"></image> -->
+       </view>
+       <view class="centopsecond">
+       <input class="centopsecondtext {{isshowsear?'centopsecondtextwan':''}}" bindfocus="inputfocus" bindblur="inputblur" bindinput="search" placeholder="搜索我的真实花园" />
+       <image bindtap="inputfocus"  class="centopsecondimg"  src="../../image/realgarden/sear.png"></image>
+       </view>     
+       <view class="searesult" wx:if="{{isshowsear}}">
+       <block wx:key="searchresult" wx:for="{{searresult}}">
+        <view wx:if="{{index<8}}" data-diaryid="{{item.diaryId}}" data-diaryname="{{item.plantName}}" bindtouchstart="toplantdetail">
+        <image src="../../image/realgarden/sear.png" class="searresimage"></image>
+        {{item.plantName}}</view>
+        </block>
+       </view>
+    </view>
+    <view class="cencen" catchtap="inputblur">   
+     <view class="cencenone">你已记录<text class="cencenonetext">{{totalnum}}</text>种植物啦</view>
+     <view class="cencentwobox" bindtap="add"><image class="cencentwo" src="../../image/realgarden/add.png"></image></view>
+    </view>
+    <view class="cenbot" bindtouchstart='moveStart' bindtouchend='moveItem'>
+      <block wx:for="{{datas}}" wx:key="plant">
+      <view data-index="{{index}}" data-diaryid="{{item.diaryId}}" data-diaryname="{{item.plantName}}" bindtap="toplantdetail" animation="{{animarr[index]}}" class="{{index==currentindex?'cenbotbg':(index==currentindex+1?'cenbotbg1':'cenbotbg2')}} {{(index==currentindex+2)&&(currentindex!=0)?'anim':''}}" wx:if="{{index>=currentindex&&index<currentindex+3}}">
+       <view class="cenbotitem item1">
+        <view class="cenbotplantname">{{item.plantName}}</view>
+        <view class="cenbotplantnameen" wx:if="{{item.scienceNameEn}}">{{item.scienceNameEn}}</view>
+        <view class="cenbotplantdetail">你上次拍照记录在<text class="cenbotplantdetailtext"> {{item.lastTime}} </text>哦</view>
+       </view>
+       <view class="cenbotitem item2">
+         <view class="conbotcenone">
+          <image src="../../image/realgarden/sun.png"></image>
+          <image src="../../image/realgarden/water.png"></image>
+          <image src="../../image/realgarden/tem.png"></image>
+         </view>
+         <view class="conbotcentwo">
+            <view>光照</view>
+            <view>水分</view>
+            <view>温度</view>
+         </view>
+         <view class="conbotcenthree">
+            <view>{{item.sunlightSimple}}</view>
+            <view>{{item.wateringSimple}}</view>
+            <view>{{item.temp}}</view>
+         </view>
+       </view>
+       <view class="cenbotitem item1">
+       <!-- (item.growthStage==2?'生长期':'结果期')==1?"幼苗期"："jieguo" -->
+          <view class="cenbottime">现在处于<text class="cenbottimetext">{{item.growthStage}}</text></view>
+          <view class="cenbottime" wx:if="{{item.taskContent}}">你的任务是</view>
+          <view class="cenbottime"><text class="cenbottimetext"></text>{{item.taskContent?item.taskContent:'暂无任务'}}</view>
+       </view>
+       <image class="plantimg" mode="widthFix" src="{{item.imgCutout}}"></image>
+      </view>
+    </block>  
+     <view class="addmore"><view>上下滑动，查看已有植物哦~</view><view>快去添加植物叭</view></view>
+    </view>
+    </view>
+  </view>
+</view>
+
+<view class="introduction" wx:if="{{introduct}}">
+ <view class="introductfirst" wx:if="{{introductfir}}">
+   <view class="firstintrotop"></view>
+   <view class="firstintrojian">↑</view>
+   <view class="firstintrotext">点击 <text>搜索</text> 可以进行搜索，点击 <text>+</text> 进行植物添加呀</view>
+ </view>
+ <view class="introductsec" wx:if="{{introductsec}}">
+   <view class="secintrotop"></view>
+   <view class="secintrojian">↓</view>
+   <view class="secintrotext"><text>上下滑动卡片</text> 可以浏览真实花园呀， <text>点击</text> 进入可以查看植物</view>
+ </view>
+ <view class="introknow" bindtap="introduct">知道啦</view>
+</view>

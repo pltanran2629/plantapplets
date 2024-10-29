@@ -1,0 +1,116 @@
+<view class="container">
+  <scroll-view scroll-y="true">
+    <returnbtn bindtap="return"></returnbtn>
+    <view class="context">
+     <view class="firstpla">
+      <view class="deleteplant" bindtap="deletplant">
+      <image src="../../image/plantdiary/deleteplant.png"></image>
+      </view>
+      <view class="firstplaname">{{diarybasic.plantName}}</view>
+      <view class="firstplatime">{{diarybasic.createTime}}录入</view>
+      <view class="firstplatime">处于{{diarybasic.growthStage}}</view>
+      <view class="firstplatip" wx:if="{{maintenance}}">{{diarybasic.plantName}}的养护小知识</view>
+      <view  class="firstplatipdetail" wx:if="{{open&&maintenance}}">
+        <view class="firstplatipdetailone">
+          <view class="firstplatipdetailonetop">- 光 照 -</view>
+          <view class="firstplatipdetailonecen">{{maintenance.sunlight}}</view>
+        </view>
+        <view class="firstplatipdetailone">
+          <view class="firstplatipdetailonetop">- 温 度 -</view>
+          <view class="firstplatipdetailonecen">{{maintenance.temp}}</view>
+        </view>
+        <view class="firstplatipdetailone">
+          <view class="firstplatipdetailonetop">- 浇 水 -</view>
+          <view class="firstplatipdetailonecen">{{maintenance.watering}}</view>
+        </view>
+      </view>
+      <view class="bindimg" bindtap="open"  wx:if="{{maintenance}}">
+      <view class="jiantou {{open?'up':'down'}}"></view>
+      </view>
+     </view>
+     <view class="secondpla" bindtap="addnewphase">
+     <text class="secondplaicon">+</text>
+           添加新状态
+     </view>
+     <view class="thirdpla">
+       <view class="thirdplatest" bindtap="colpage">{{diarybasic.taskContent?diarybasic.taskProgressDesc:'暂无任务'}}</view>
+       <view class="thirdplatejin">
+         <view class="thirdjinfa">
+          <view class="thirdjinson" style="width: {{520*diarybasic.taskProgress}}rpx;"></view>
+         </view>
+         <image class="wan" src="../../../image/plantdiary/teng.png"></image>
+       </view>
+     </view>
+     <view class="forthpla">
+     <block wx:for="{{record}}" wx:key="record">
+      <view class="forthplaonebg" data-diaryid="{{item.recordId}}" bindtouchstart="startouch" bindtouchend="endtouch">
+        <view class="closebtn">
+         <image bindtap="deletdiary" style="opacity: {{diaryopen&&(item.recordId==diaryid)?'1':'0'}};" src="../../image/plantdiary/deletediary.png"></image>
+        </view>
+        <view class="forthplaone {{diaryopen&&(item.recordId==diaryid)?'plantonemove':'plantonenor'}}" >
+            <view class="forthplaonele">
+              <image bindtap="preimage" data-imageurl="{{item.plantImg}}" src="{{item.plantImg}}"></image>
+            </view>
+            <view class="forthplaoneri">
+              <view  class="forthplaoneridate">{{item.recordTime}}</view>
+              <view  class="forthplaoneridate">处于{{item.growthStage}}</view>
+              <view class="forthplaoneridiary">{{item.recordContent}}</view>
+            </view>
+        </view>
+      </view>  
+    </block>
+     </view>
+    </view>
+  </scroll-view>
+</view>
+<view class="model" wx:if="{{modelshowdelplant||modelshowdeldia}}">
+  <view class="modelcon">
+  <view class="modeltop">{{modelcontent}}</view>
+  <view class="modelbot">
+   <view bindtap="closemodel" class="close">关闭</view>
+   <view bindtap="delsure" class="sure">确定</view>
+  </view>
+  </view>
+</view>
+
+<view class="model" wx:if="{{success}}">
+ <view class="modelsuc">
+  <view>删除成功</view>
+  </view>
+</view>
+ <!-- 
+
+ -->
+<view class="introduction" wx:if="{{introduct}}">
+ <view class="introductfirst" wx:if="{{introductfir}}">
+   <view class="firstintrotop"></view>
+   <view class="firstintrojian">↑</view>
+   <view class="firstintrotext">点击 <text>×</text> 可以删除植物，点击 <text>∨</text> 查看植物养护指南呀</view>
+ </view>
+ <view class="introductsec"  wx:if="{{introductsec}}">
+   <view class="secintrotop"></view>
+   <view class="secintrojian">↓</view>
+   <view class="secintrotext">点击 <text>+</text> 可添加新的植物日记，完成 <text>任务</text> 可收获植物图鉴哟</view>
+ </view>
+ <view class="introductthird" wx:if="{{introductthird}}">
+   <view class="thirdintrotop"></view>
+   <view class="thirdintrojian">↓</view>
+   <view class="thirdintrotext">在这里可以查看我的植物日记哦， <text>左滑</text> ，点击 <text>×</text> 可删除该条植物记录哟</view>
+ </view>
+ <view class="introknow" bindtap="introduct">知道啦</view>
+</view>
+
+<view class="model1" wx:if="{{realshowpic}}">
+  <view class="modelbg">
+    <image animation="{{anim}}" class="realgreenbg" src="https://hotpotman.oss-cn-beijing.aliyuncs.com/basic/realgreenbg.png"></image>
+    <image animation="{{anim}}" class="realgreengong" src="https://hotpotman.oss-cn-beijing.aliyuncs.com/basic/realgreengonghu.png"></image>
+    <image animation="{{anim}}" class="realgreenfol" src="{{realcard.plantImg}}"></image>
+    <view animation="{{anim}}" class="plantname1">{{realcard.name}}</view>
+    <view class="bottom">
+      <view class="savaimage" bindtap="closemodel1">返回</view>
+      <view class="savaimage" bindtap="saveimage">保存图片</view>
+    </view>
+  </view>
+</view>
+<canvas id="cavansId" hidden="{{canvashidden}}" type="2d">
+</canvas>

@@ -1,0 +1,222 @@
+/* pages/compenment/calendar/calendar.wxss */
+.icon{
+  width: 40rpx;
+  height: 0;
+  border: 7px solid transparent;
+
+}
+.calendarTitle{
+  margin-top: 15rpx;
+  margin-bottom: 5rpx;
+  font-size: 34rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.leftIcon{
+  width: 40rpx;
+
+  border-right-color: #1A7C31;
+ margin-right: 60rpx;
+ /* padding:30rpx; */
+}
+.rightIcon{
+  width: 40rpx;
+
+  border-left-color: #1A7C31;
+  margin-left: 60rpx;
+ /* padding:30rpx; */
+}
+.toggleBg{
+  background-color: #f6f6f6;
+  color: #999;
+  font-size: 22rpx;
+  line-height: 36rpx;
+  border-radius: 18rpx;
+  padding: 0 14rpx;
+  position: absolute;
+  right: 40rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+}
+.icon2{
+  width: 18rpx;
+  height: 18rpx;
+  border-top: 4rpx solid #aaa;
+  border-left: 4rpx solid #aaa;
+  margin-left: 10rpx;
+}
+.fold{
+  transform: rotate(45deg);
+}
+.unfold{
+  transform: rotate(225deg);
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.direction-column {
+  flex-direction: column;
+}
+
+.flex1 {
+  flex: 1;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.flex-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.align-stretch {
+  align-items: stretch;
+}
+
+.calendar {
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+  border-radius: 40rpx;
+}
+.calendarbg{
+  background-color: #fff;
+  opacity: 0.9;
+}
+
+.calendar .title {
+  font-size: 30rpx;
+  color: #1A7C31;
+  line-height: 60rpx;
+  position: relative;
+}
+
+.calendar .title .year-month {
+  margin-right: 20rpx;
+}
+
+.calendar .title .icon {
+  /* padding: 0 32rpx; */
+  width: 60rpx;
+  font-size: 32rpx;
+  color: #999;
+}
+
+.open{
+  padding-top: 5rpx;
+  padding-bottom: 42rpx;
+}
+
+.calendar .calendar-week {
+  line-height: 40rpx;
+  padding: 0 30rpx;
+  font-size: 16rpx;
+  color: #999;
+  margin-top: 16rpx;
+}
+
+.calendar .calendar-week .date {
+  width: 74.6rpx;
+  text-align: center;
+  color: #1A7C31;
+}
+
+.calendar .calendar-main {
+  padding: 14rpx 25rpx;
+  transition: height 0.3s;
+  overflow: hidden;
+}
+
+.calendar .calendar-main .day {
+  position: relative;
+  width: 74.6rpx;
+  color: #666;
+  text-align: center;
+  height: 60rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.calendar .calendar-main .day .bg {
+  height: 56rpx;
+  line-height: 50rpx;
+  font-size: 22rpx;
+  color: #1A7C31;
+  font-weight: bold;
+  width: 100%;
+}
+
+.calendar .calendar-main .day .select {
+  width: 56rpx;
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(-60deg, #1A7C31, #1A7C31);
+  box-shadow: 0px 5px 16px 0px #a9f7dd;
+  margin: 0 auto;
+}
+
+.calendar .calendar-main .day .other-month {
+  color: #1A7C31;
+}
+
+.calendar .calendar-main .day .spot {
+  width: 8rpx;
+  height: 8rpx;
+  background-color: #1A7C31;
+  border-radius: 50%;
+  margin: 6rpx auto 0;
+}
+
+.calendar-week-clo {
+  /* color: #044ff0; */
+}
+
+.month-top {
+  color: #b3b5a6;
+}
+
+/* 让当前日期时间显示为指定的文字 */
+.today {
+  color: rgb(119, 49, 49) !important;
+}
+.today::after {
+  /* content: "今"; */
+  color: red !important;
+}

@@ -1,0 +1,32 @@
+<view class="calendar {{open?'calendarbg':''}}">
+  <!-- 日历操作部分 -->
+  <view class="title flex">
+    <view class="flex calendarTitle" wx:if="{{open}}">
+      <view class="icon leftIcon" bindtap="handleLastMonth"></view>
+      <picker value="{{selectDay.year+'-'+selectDay.month}}" bindchange="handleMonthPicker" mode="date" fields="month">{{selectDay.year}}年{{selectDay.month>9?selectDay.month:"0"+selectDay.month}}月</picker>
+      <view class="icon rightIcon" bindtap="handleNextMonth"></view>
+    </view>
+    
+  </view>
+  <!-- 日历头部 -->
+  <view class="flex-around calendar-week">
+    <view class="date">SUN</view>
+    <view class="date">MON</view>
+    <view class="date">TUE</view>
+    <view class="date">WED</view>
+    <view class="date">THU</view>
+    <view class="date">FRI</view>
+    <view class="date">SAT</view>
+  </view>
+  <!-- 日历主体 -->
+  <view class="flex-start flex-wrap calendar-main" style="height:{{dateList.length/7*65}}rpx">
+    <view wx:for="{{dateList}}" wx:key="dateList" class="day">
+      <view class="bg {{(item.year === selectDay.year && item.month === selectDay.month) ? (item.day === selectDay.day?'select':'') : 'other-month'}}" catchtap="handleDateSelect" data-day="{{item.day}}" data-year="{{item.year}}" data-month="{{item.month}}" data-date-string="{{item.dateString}}">{{item.day}}</view>
+      <view class="spot" wx:if="{{item.spot}}" />
+    </view>
+  </view>
+  <view catchtap="handleToggleChange" class="flex open">
+      <!-- <view>{{open?"收起":"展开"}}</view> -->
+      <view class="icon2 {{open?'fold':'unfold'}}"></view>
+    </view>
+</view>

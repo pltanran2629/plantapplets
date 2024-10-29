@@ -1,0 +1,12 @@
+.container{
+  margin:0 auto;
+  padding: 0rpx;
+}
+@font-face{
+  src:url(https://636c-cloud1-4gmvnmfye6f759d9-1310145910.tcb.qcloud.la/FZLTZHJW.TTF?sign=c7a07527f6ac6676ecc8a4606a27d8b8&t=1649586301);
+  font-family: FZ;
+}
+@font-face{
+  src:url(https://636c-cloud1-4gmvnmfye6f759d9-1310145910.tcb.qcloud.la/STXIHEI.TTF?sign=a639f24ca62dff512af5b20fc3dae5d4&t=1649586347);
+  font-family: ST;
+}

@@ -1,0 +1,537 @@
+/* pages/piccollect/piccollect.wxss */
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
+
+.size {
+  background-image: url(https://hotpotman.oss-cn-beijing.aliyuncs.com/basic/bgimage.png);
+  background-size: 100% 100%;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sizetop {
+  width: 100vw;
+  height: 12vh;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.sizecon {
+  height: 6vh;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  width: 80%;
+  position: relative;
+}
+
+.sizeconvir {
+  background-color: #A5E5BF;
+  height: 3.82vh;
+  width: 23.5vw;
+  padding-left: 10.5vw;
+  font-size: 3.2vw;
+  color: #2F6645;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border-top-left-radius: 10rpx;
+  /* border-right: 2.5vw solid rgba(97, 201, 139,0.78); */
+  z-index: 4;
+}
+
+.sizeconreal {
+  z-index: 4;
+  width: 34.5vw;
+  font-size: 3.2vw;
+  color: #2F6645;
+  height: 3.8vh;
+  transform: skewX(40deg);
+  background-color: #A5E5BF;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 30.5vw;
+  border-top-right-radius: 10rpx;
+}
+
+.sizeconreal>view {
+  transform: skewX(-40deg);
+}
+
+.active {
+  font-size: 3.4vw;
+  color: white;
+  background-color: rgba(97, 201, 139, 0.78);
+  z-index: 3;
+  border-top-right-radius: 10rpx;
+}
+
+.notactvir {
+  box-shadow: -1vw -1vw 1vw rgba(0, 0, 0, 0.1);
+}
+
+.notactreal {
+  box-shadow: 1vw -1vw 1vw rgba(0, 0, 0, 0.1);
+}
+
+.sizebot {
+  /* margin-top: -0.2vh; */
+  width: 90vw;
+  height: 68vh;
+  background-color: rgba(97, 201, 139, 0.78);
+  border-radius: 4vw;
+  z-index: 5;
+}
+
+.realgar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.realgargenscoll {
+  margin-top: 3vh;
+  height: 64vh;
+  width: 95%;
+}
+
+.realtime {
+  color: white;
+  font-size: 2.9vw;
+  letter-spacing: 0.01rem;
+  display: flex;
+  margin-bottom: 2vh;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: baseline;
+  width: 93%;
+}
+
+.realtime>image {
+  width: 3vw;
+  height: 2vw;
+  margin-left: 1vw;
+}
+
+.realcol {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.realcolone {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 2.5vh;
+}
+
+.colonebg {
+  width: 35vw;
+  height: 21vh;
+}
+
+.virfolimage {
+  position: absolute;
+  top: 2.5vh;
+  z-index: 2;
+  width: 28vw;
+  height: 13vh;
+  /* transform: rotateX(180deg); */
+}
+
+.coldes {
+  position: absolute;
+  top: 16.2vh;
+  text-align: center;
+  color: #1A5629;
+}
+
+.namecn {
+  font-size: 2.5vw;
+  letter-spacing: 0.3rem;
+}
+
+.nameen {
+  font-size: 1.8vw;
+  max-width: 22vw;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.realfolimage {
+  position: absolute;
+  top: 3vh;
+  z-index: 2;
+  width: 28vw;
+  height: 13vh;
+}
+
+.model {
+  background-color: #2d2d2d;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+}
+
+.modelbg {
+  background-image: url(https://hotpotman.oss-cn-beijing.aliyuncs.com/basic/bgimagezhao.png);
+  background-size: 100% 100%;
+  z-index: 1000000;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.virgreenbg {
+  width: 85.8vw;
+  height: 53vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  transform: translate(-50%, -50%);
+  animation: scalimagevirgreenbg 0.6s;
+}
+
+.virgreengong {
+  width: 59vw;
+  height: 40vh;
+  position: absolute;
+  top: 29vh;
+  animation: scalimagevirgreengong 0.6s;
+}
+
+.virgreenfol {
+  width: 60vw;
+  height: 25vh;
+  position: absolute;
+  top: 44vh;
+  animation: scalimagevirgreenflo 0.6s;
+}
+
+/* @keyframes scalimage{
+  0%{scale: 0.0; height: 0;}
+  10%{scale: 0.1;}
+  20%{scale: 0.20;}
+  30%{scale: 0.30;}
+  40%{scale: 0.40;}
+  50%{scale: 0.5;}
+  60%{scale: 0.60;}
+  70%{scale: 0.70;}
+  80%{scale: 0.8;}
+  90%{scale: 0.90;}
+  100%{scale: 1; height: 53vh;} */
+/* } */
+@keyframes scalimagevirgreengong {
+  0% {
+    height: 0vh;
+  }
+
+  20% {
+    height: 8vh;
+  }
+
+  40% {
+    height: 16vh;
+  }
+
+  60% {
+    height: 24vh;
+  }
+
+  80% {
+    height: 32vh;
+  }
+
+  100% {
+    height: 38vh;
+  }
+}
+
+@keyframes scalimagevirgreenbg {
+  0% {
+    height: 0vh;
+  }
+
+  20% {
+    height: 10vh;
+  }
+
+  40% {
+    height: 20vh;
+  }
+
+  60% {
+    height: 30vh;
+  }
+
+  80% {
+    height: 40vh;
+  }
+
+  100% {
+    height: 53vh;
+  }
+}
+
+@keyframes scalimagevirgreenflo {
+  0% {
+    height: 0vh;
+  }
+
+  20% {
+    height: 5vh;
+  }
+
+  40% {
+    height: 10vh;
+  }
+
+  60% {
+    height: 15vh;
+  }
+
+  80% {
+    height: 20vh;
+  }
+
+  100% {
+    height: 25vh;
+  }
+}
+
+.bottom {
+  position: absolute;
+  bottom: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100vw;
+}
+
+.savaimage {
+  width: 30vw;
+  height: 4.5vh;
+  background-color: #606060;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  letter-spacing: 00.05rem;
+  font-size: 2.8vw;
+}
+
+.plantname {
+  width: 30vw;
+  height: 4.3vh;
+  background-image: linear-gradient(#31AD77, #dafdde);
+  border-radius: 2.5vh;
+  position: absolute;
+  top: 70vh;
+  color: white;
+  text-align: center;
+  line-height: 2em;
+  animation: showname 0.6s;
+}
+
+@keyframes showname {
+  0% {
+    height: 0vh
+  }
+
+  50% {
+    height: 2vh
+  }
+
+  100% {
+    height: 4.3vh
+  }
+
+}
+
+#cavansId {
+  width: 100vw;
+  height: 100vh;
+}
+
+.realgreenbg {
+  width: 85.8vw;
+  height: 53vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  transform: translate(-50%, -50%);
+  animation: scalimagevirgreenbg 0.6s;
+}
+
+.realgreengong {
+  width: 59vw;
+  height: 32vh;
+  position: absolute;
+  top: 37vh;
+  animation: scalimagerealgreengong 0.6s;
+}
+
+@keyframes scalimagerealgreengong {
+  0% {
+    height: 0vh;
+  }
+
+  20% {
+    height: 7vh;
+  }
+
+  40% {
+    height: 14vh;
+  }
+
+  60% {
+    height: 21vh;
+  }
+
+  80% {
+    height: 27vh;
+  }
+
+  100% {
+    height: 32vh;
+  }
+}
+
+.realgreenfol {
+  width: 60vw;
+  height: 25vh;
+  position: absolute;
+  top: 30.5vh;
+  animation: scalimagerealflo 0.6s;
+  /* transform: rotate(180deg); */
+}
+
+@keyframes scalimagerealflo {
+  0% {
+    height: 0vh;
+  }
+
+  20% {
+    height: 4vh;
+  }
+
+  40% {
+    height: 8vh;
+  }
+
+  60% {
+    height: 12vh;
+  }
+
+  80% {
+    height: 16vh;
+  }
+
+  100% {
+    height: 21.5vh;
+  }
+}
+
+.introduction {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 9999999;
+}
+
+.firstintrotop {
+  width: 85vw;
+  height: 32vh;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 13vh;
+  border: 10rpx white dashed;
+}
+
+.firstintrojian {
+  color: white;
+  font-size: 8vh;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 45.5vh;
+}
+
+.firstintrotext {
+  font-size: 2vh;
+  color: white;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 54.5vh;
+  width: 65vw;
+  font-family: ST;
+}
+
+.firstintrotext>text,
+.secintrotext>text {
+  color: #b5ffc7;
+  /* font-weight: 520; */
+}
+
+.introknow {
+  font-size: 2.3vh;
+  color: white;
+  position: absolute;
+  right: 8vw;
+  bottom: 16vh;
+  width: 15vw;
+  /* height: 4vh; */
+  padding: 1vh 3vw;
+  border: 5rpx solid white;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.whitereturn {
+  width: 3vw;
+  height: 2.3vh;
+  padding: 8vw;
+  /* padding-left: 8vw; */
+}
+
+.warning {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vw;
+  color: white;
+}

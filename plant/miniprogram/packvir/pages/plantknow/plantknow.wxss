@@ -1,0 +1,267 @@
+.bgimg{
+  width: 100vw;
+  z-index: -1;
+  min-height: 60vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.returnbtn{
+  margin-top: 8vh;
+  margin-left: 9vw;
+}
+.size{
+  height: 52vh;
+  margin-top: 36vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.top{
+  font-size: 1.8vw;
+  color: #1F5B37;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 80%;
+}
+.top>view{
+  margin: 0 0.5vw;
+  padding:1.8vw 2.8vw;
+  background-color: white;
+  opacity: 0.5;
+  border-radius: 2.0vw;
+  font-family: FZ;
+  min-width: 6em;
+  text-align: center;
+}
+.cen{
+  margin-top: 2vh;
+  background-color: white;
+  border-radius: 4vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+}
+.cenfir{
+  color: #1F5B37;
+  margin-top: 1.7vh;
+  width: 80%;
+}
+.cenfirtit{
+  font-size:2.6vw ;
+}
+.cenfironepic1{
+  width: 6.2vw;
+  height: 2.8vh;
+  margin-top: 0.5vh;
+  margin-bottom: 0.5vh;
+}
+.cenfironepic2{
+  width: 4vw;
+  height: 2.8vh;
+  margin-top: 0.5vh;
+  margin-bottom: 0.5vh;
+}
+.cenfironepic3{
+  width: 3.8vw;
+  height: 2.8vh;
+  margin-top: 0.5vh;
+  margin-bottom: 0.5vh;
+}
+.cenfirpla{
+  margin-top: 1vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.cenfirone{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2vw;
+}
+.cenfironetit{
+  color: #B8C9BF;
+  margin-top: 2vh;
+  margin-bottom: 1vh;
+}
+.censec{
+  margin-top: 3vh;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+ align-items: flex-start;
+ color: #1F5B37;
+}
+.censeccn{
+  font-size:6.7vw;
+}
+.censecen{
+  font-size: 4.5vw;
+}
+.censecdec{
+  margin-top:1vh;
+  font-size: 2.6vw;
+  line-height: 1.9em;
+  height: 9vh;
+  overflow-y: scroll;
+}
+.centhi{
+  margin-top: 3vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 90%;
+}
+.centhi>view{
+ height: 5.5vh;
+ width: 37vw;
+ text-align: center;
+ border-radius: 40rpx;
+ line-height: 2.7em;
+}
+.centhifi{
+  color: #FFC764;
+  background-color:rgba(255, 199, 100, 0.23) ;
+}
+.centhise{
+  color: white;
+  background-color:#FFC764 ;
+}
+.model{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modelcon{
+  width: 60vw;
+  height: 15vh;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #fff;
+  opacity: 0.9;
+  color: #1F5B37;
+  font-size: 3vh;
+  border-radius: 15rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.03rem;
+  font-family: FZ;
+  box-shadow: 0 0 40rpx rgba(0, 0, 0, 0.2);
+}
+.modelgar{
+  width: 65.4vw;
+  height: 16.5vh;
+  padding: 1vh 4vw;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #fff;
+  opacity: 0.9;
+  color: #1F5B37;
+  font-size: 1.5vh;
+  border-radius: 15rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  letter-spacing: 0.03rem;
+  font-family: FZ;
+}
+.modeltop{
+  padding-top: 5vh;
+}
+.choseifaddgar{
+   display: flex;
+   flex-direction: row;
+  font-size: 1.5vh;
+  color: #1F5B37;
+  height: 4vh;
+width: 100%;
+justify-content: space-around;
+align-items: center;
+padding-top: 5vh;
+}
+.choseifaddgar>view{
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.delet{
+  color:#6b6b6b;
+  border-top:2rpx #6b6b6b solid;
+  border-right:2rpx #6b6b6b solid;
+}
+.sure{
+  border-top:2rpx #6b6b6b solid;
+}
+.introduction{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 9999999;
+}
+.firstintrotop{
+  width: 85vw;
+  height: 9vh;
+  position: absolute;
+  left:50%;
+  transform: translateX(-50%);
+ bottom: 3.5vh;
+  border: 10rpx white dashed;
+}
+.firstintrojian{
+  color: white;
+  font-size: 8vh;
+  position: absolute;
+  left:50%;
+  transform: translateX(-50%);
+ bottom: 13.5vh;
+}
+.firstintrotext{
+ font-size: 2vh;
+ color: white;
+ position: absolute;
+ left:50%;
+  transform: translateX(-50%);
+bottom: 22.5vh;
+ width: 65vw;
+ font-family: ST;
+}
+.firstintrotext>text,.secintrotext>text{
+  color: #b5ffc7;
+  /* font-weight: 520; */
+}
+.introknow{
+  font-size: 2.3vh;
+  color: white;
+  position: absolute;
+  right: 8vw;
+  bottom: 40vh;
+  width: 15vw;
+  /* height: 4vh; */
+  padding: 1vh 3vw;
+  border: 5rpx solid white;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

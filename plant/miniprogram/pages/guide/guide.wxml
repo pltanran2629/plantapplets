@@ -1,0 +1,34 @@
+<!--pages/guide/guide.wxml-->
+<view class="container">
+  <swiper class='u-wrp-bnr' current="0" bindchange='onSlideChangeEnd' indicator-dots='true' indicator-active-color='#37AA55' indicator-color='#D9FFE3'>
+    <swiper-item>
+    <view class="swiperone">
+      <image class="shadow1" src="https://hotpotman.oss-cn-beijing.aliyuncs.com/basic/shadow1.png"></image>
+      <image class="plant1" src="https://hotpotman.oss-cn-beijing.aliyuncs.com/basic/guiderecord.png"></image>
+      <image class="phone1" src="https://hotpotman.oss-cn-beijing.aliyuncs.com/basic/phone1.png"></image>
+      <text class="title {{currentindex==0?'css_animation':''}}" decode="{{true}}">记&nbsp; &nbsp;录</text>
+      <view class="des {{currentindex==0?'css_animation':''}}">记录属于你的植物日记</view>
+    </view>
+    </swiper-item>
+    <swiper-item>
+    <view class="swiperone">
+     <image class="shadow1" src="https://hotpotman.oss-cn-beijing.aliyuncs.com/basic/shadow1.png"></image>
+      <image class="plant2" src="https://hotpotman.oss-cn-beijing.aliyuncs.com/basic/guidecol.png"></image>
+      <image class="phone1" src="https://hotpotman.oss-cn-beijing.aliyuncs.com/basic/phone2.png"></image>
+      <text class="title {{currentindex==1?'css_animation':''}}" decode="{{true}}">图&nbsp; &nbsp;鉴</text>
+      <view class="des {{currentindex==1?'css_animation':''}}">收藏你的植物图鉴卡片</view>
+    </view>
+    </swiper-item>
+    <swiper-item>
+    <view class="swiperone authou">
+      <image class="shadow1" src="https://hotpotman.oss-cn-beijing.aliyuncs.com/basic/shadow1.png"></image>
+      <image class="plant3" src="https://hotpotman.oss-cn-beijing.aliyuncs.com/basic/guidevir.png"></image>
+      <image class="phone1" src="https://hotpotman.oss-cn-beijing.aliyuncs.com/basic/phone3.png"></image>
+      <text class="title {{currentindex==2?'css_animation':''}}" decode="{{true}}">虚&nbsp; &nbsp;拟</text>
+      <view class="des {{currentindex==2?'css_animation':''}}">虚拟种植体验植物生长历程</view>
+      <button class="aubtn" style="width: 30vw;" open-type="getUserInfo" bindtap="bindGetUserInfo">授权登录</button>
+    </view>  
+    </swiper-item>
+</swiper>
+
+</view>

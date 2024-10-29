@@ -1,0 +1,79 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/guide/guide",
+    "pages/index/index",
+    "pages/realgarden/realgarden",
+    "pages/piccollect/piccollect",
+    "pages/mine/mine",
+    "pages/aboutus/aboutus",
+    "pages/record/record"
+  ],
+  "subpackages": [
+    {
+      "root": "packvir",
+      "pages": [
+        "pages/camera/camera",
+        "pages/plantknow/plantknow",
+        "pages/virtual/virtual",
+        "pages/virlist/virlist"
+      ],
+      "plugins": {
+        "kivicube-slam": {
+          "provider": "wx12ad8a61f049ea02",
+          "version": "1.3.11"
+        }
+      }
+    },
+    {
+      "root": "packreal",
+      "pages": [
+        "pages/addnewplant/addnewplant",
+        "pages/plantdiary/plantdiary"
+      ]
+    },
+    {
+      "root": "packcoll",
+      "pages": [
+        
+      ]
+    }
+  ],
+  "window": {
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#000",
+    "selectedColor": "#1A7C31",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "./image/tabbar/tab1.png",
+        "selectedIconPath": "./image/tabbar/tab1s.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/realgarden/realgarden",
+        "iconPath": "./image/tabbar/tab2.png",
+        "selectedIconPath": "./image/tabbar/tab2s.png",
+        "text": "真实花园"
+      },
+      {
+        "pagePath": "pages/piccollect/piccollect",
+        "iconPath": "./image/tabbar/tab3.png",
+        "selectedIconPath": "./image/tabbar/tab3s.png",
+        "text": "植物图鉴"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "./image/tabbar/tab4.png",
+        "selectedIconPath": "./image/tabbar/tab4s.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}
